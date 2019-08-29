@@ -39,8 +39,9 @@ dependencies:
   flutter_facebook_login: any
   geolocator: ^5.1.1+1
 #  firebase_messaging:
-
-
+#  barcode_scan: any
+  image_picker: any
+  dio: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
