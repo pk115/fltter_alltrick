@@ -1,12 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_alltrick/sqlite/add_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'add_screen.dart';
+
 import 'login_Screen.dart';
 import 'page_one.dart';
-import 'page_two.dart';
 import 'page_three.dart';
+import 'page_two.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,12 +20,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   TextStyle myStyle = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
 
-  Future<Null> getUser() async{
+  Future<Null> getUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String User= await  prefs.get("Users");
+    String User = await prefs.get("Users");
     print(User);
   }
-@override
+
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
@@ -45,11 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
 
-    Future<Null> Logount() async{
-
+    Future<Null> Logount() async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
-       await  prefs.remove("Users");
-
+      await prefs.remove("Users");
     }
 
     Widget floatingAction = FloatingActionButton(
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         var response = await Navigator.push(context,
             MaterialPageRoute(builder: (context) => AddScreen('Value 1')));
 
-        print(response['Name']??'Null');
+        print(response['Name'] ?? 'Null');
       },
       child: Icon(Icons.add),
     );
@@ -100,30 +100,31 @@ class _HomeScreenState extends State<HomeScreen> {
 //            ),
 //          ),
           UserAccountsDrawerHeader(
-              currentAccountPicture: hasimage
-                  ? CircleAvatar(
+            currentAccountPicture: hasimage
+                ? CircleAvatar(
 //                backgroundImage: NetworkImage('https://randomuser.me/api/portraits/med/men/77.jpg'),
-                      backgroundImage: AssetImage('assets/image/bg4.jpg'),
-                      child: Text('MM'),
-                    )
-                  : CircleAvatar(
-                      backgroundColor: Colors.white70,
-                      child: Text(
-                        "MM",
-                        style: TextStyle(fontSize: 40.0, color: Colors.brown),
-                      ),
+                    backgroundImage: AssetImage('assets/image/bg4.jpg'),
+                    child: Text('MM'),
+                  )
+                : CircleAvatar(
+                    backgroundColor: Colors.white70,
+                    child: Text(
+                      "MM",
+                      style: TextStyle(fontSize: 40.0, color: Colors.brown),
                     ),
-              accountName: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 1),
-                child: Text(
-                  "Manee Meekam",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                ),
+                  ),
+            accountName: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 1),
+              child: Text(
+                "Manee Meekam",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
               ),
-              accountEmail: Text("aaa@gmail.com"),
-          decoration:BoxDecoration(
-            image: DecorationImage(image: AssetImage('assets/image/bg5.jpg'),fit: BoxFit.fill)
-          ) ,
+            ),
+            accountEmail: Text("aaa@gmail.com"),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/image/bg5.jpg'),
+                    fit: BoxFit.fill)),
           ),
 
           ListTile(
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'หน้าหลัก',
             ),
-            subtitle:Text("หน้าหลัก") ,
+            subtitle: Text("หน้าหลัก"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -140,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'ผู้ใช้งาน',
             ),
-            subtitle:Text("ผู้ใช้งาน") ,
+            subtitle: Text("ผู้ใช้งาน"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -149,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'ผู้ใช้งานในระบบ',
             ),
-            subtitle:Text("ผู้ใช้งานในระบบ") ,
+            subtitle: Text("ผู้ใช้งานในระบบ"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).pop();
@@ -161,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'สมาชิก ',
             ),
-            subtitle:Text("สมาชิก Member") ,
+            subtitle: Text("สมาชิก Member"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {
               Navigator.of(context).pop();
@@ -173,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'ตั้งค่า',
             ),
-            subtitle:Text("ตั้งค่า") ,
+            subtitle: Text("ตั้งค่า"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -182,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'ปิดโปรแกรม',
             ),
-            subtitle:Text("ปิดโปรแกรม") ,
+            subtitle: Text("ปิดโปรแกรม"),
             trailing: Icon(Icons.exit_to_app),
             onTap: () {
               exit(0);
@@ -192,13 +193,13 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text(
               'ออกจากระบบ',
             ),
-            subtitle:Text("ออกจากระบบ") ,
+            subtitle: Text("ออกจากระบบ"),
             trailing: Icon(Icons.exit_to_app),
             onTap: () {
               Logount();
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => LoginScreen()));
-             // exit(0);
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()));
+              // exit(0);
             },
           ),
         ],

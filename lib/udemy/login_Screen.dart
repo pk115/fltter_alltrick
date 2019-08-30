@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_alltrick/udemy/udemylab_Page.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:flutter_alltrick/utils/database_helper.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_alltrick/sqlite/utils/database_helper.dart';
+import 'package:flutter_alltrick/udemy/udemylab_Page.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alltrick/utils/database_helper.dart';
-//import 'package:barcode_scan/barcode_scan.dart';
-import 'add_member_screen.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_alltrick/sqlite/add_member_screen.dart';
+import 'package:flutter_alltrick/sqlite/utils/database_helper.dart';
 
 class MemberScreen extends StatefulWidget {
   @override

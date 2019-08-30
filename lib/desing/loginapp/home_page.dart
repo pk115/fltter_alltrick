@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_alltrick/udemy/add_screen.dart';
+import 'package:flutter_alltrick/sqlite/add_screen.dart';
 import 'package:flutter_alltrick/udemy/page_one.dart';
-import 'package:flutter_alltrick/udemy/page_two.dart';
 import 'package:flutter_alltrick/udemy/page_three.dart';
+import 'package:flutter_alltrick/udemy/page_two.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         var response = await Navigator.push(context,
             MaterialPageRoute(builder: (context) => AddScreen('Value 1')));
 
-        print(response['Name']??'Null');
+        print(response['Name'] ?? 'Null');
       },
       child: Icon(Icons.add),
     );
@@ -82,16 +82,16 @@ class _HomePageState extends State<HomePage> {
             currentAccountPicture: hasimage
                 ? CircleAvatar(
 //                backgroundImage: NetworkImage('https://randomuser.me/api/portraits/med/men/77.jpg'),
-              backgroundImage: AssetImage('assets/image/bg4.jpg'),
-              child: Text('MM'),
-            )
+                    backgroundImage: AssetImage('assets/image/bg4.jpg'),
+                    child: Text('MM'),
+                  )
                 : CircleAvatar(
-              backgroundColor: Colors.white70,
-              child: Text(
-                "MM",
-                style: TextStyle(fontSize: 40.0, color: Colors.brown),
-              ),
-            ),
+                    backgroundColor: Colors.white70,
+                    child: Text(
+                      "MM",
+                      style: TextStyle(fontSize: 40.0, color: Colors.brown),
+                    ),
+                  ),
             accountName: Padding(
               padding: const EdgeInsets.symmetric(vertical: 1),
               child: Text(
@@ -100,9 +100,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             accountEmail: Text("aaa@gmail.com"),
-            decoration:BoxDecoration(
-                image: DecorationImage(image: AssetImage('assets/image/bg5.jpg'),fit: BoxFit.fill)
-            ) ,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/image/bg5.jpg'),
+                    fit: BoxFit.fill)),
           ),
 
           ListTile(
@@ -110,7 +111,7 @@ class _HomePageState extends State<HomePage> {
             title: Text(
               'หน้าหลัก',
             ),
-            subtitle:Text("หน้าหลัก") ,
+            subtitle: Text("หน้าหลัก"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -119,7 +120,7 @@ class _HomePageState extends State<HomePage> {
             title: Text(
               'ผู้ใช้งาน',
             ),
-            subtitle:Text("ผู้ใช้งาน") ,
+            subtitle: Text("ผู้ใช้งาน"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -128,7 +129,7 @@ class _HomePageState extends State<HomePage> {
             title: Text(
               'ตั้งค่า',
             ),
-            subtitle:Text("ตั้งค่า") ,
+            subtitle: Text("ตั้งค่า"),
             trailing: Icon(Icons.keyboard_arrow_right),
             onTap: () {},
           ),
@@ -137,7 +138,7 @@ class _HomePageState extends State<HomePage> {
             title: Text(
               'ออกจากระบบ',
             ),
-            subtitle:Text("ออกจากระบบ") ,
+            subtitle: Text("ออกจากระบบ"),
             trailing: Icon(Icons.exit_to_app),
             onTap: () {
               exit(0);

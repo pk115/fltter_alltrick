@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-
-
-import 'package:flutter_alltrick/udemy/loginapp/home_page.dart';
-import 'package:flutter_alltrick/udemy/loginapp/singin_Page.dart';
+import 'package:flutter_alltrick/desing/loginapp/home_page.dart';
+import 'package:flutter_alltrick/desing/loginapp/singin_Page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -131,6 +129,5 @@ class _LoginPageState extends State<LoginPage> {
   dosingin() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => SingInPage()));
-
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alltrick/sqlite/utils/database_helper.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_alltrick/utils/database_helper.dart';
 
 class AddMemberScreen extends StatefulWidget {
   var id;
@@ -105,7 +105,7 @@ class _AddMemberScreenState extends State<AddMemberScreen> {
           'email': ctrEmail.text,
           'telephone': ctrPhone.text,
           'birthDate': birthDate.toString(),
-          'id':id
+          'id': id
         };
         if (id != null) {
           await db.UpdateDataUser(member);

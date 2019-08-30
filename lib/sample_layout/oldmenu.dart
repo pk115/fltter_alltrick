@@ -1,22 +1,21 @@
 //import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_alltrick/cmdev/rowandcolum_page.dart';
-import 'package:flutter_alltrick/cmdev/sizebox_page.dart';
-import 'package:flutter_alltrick/cmdev/stacklayout_page.dart';
+import 'package:flutter_alltrick/desing/loginapp/login_page.dart';
 import 'package:flutter_alltrick/map_location/geolocator.dart';
+import 'package:flutter_alltrick/sample_layout/DesigeFlutter.dart';
+import 'package:flutter_alltrick/sample_layout/Intrinsicwh_page.dart';
+import 'package:flutter_alltrick/sample_layout/expanded_page.dart';
+import 'package:flutter_alltrick/sample_layout/gridview1_page.dart';
+import 'package:flutter_alltrick/sample_layout/listview1_page.dart';
+import 'package:flutter_alltrick/sample_layout/listview2_page.dart';
+import 'package:flutter_alltrick/sample_layout/listview3_page.dart';
+import 'package:flutter_alltrick/sample_layout/listview4_page.dart';
+import 'package:flutter_alltrick/sample_layout/rowandcolum_page.dart';
+import 'package:flutter_alltrick/sample_layout/sizebox_page.dart';
+import 'package:flutter_alltrick/sample_layout/stacklayout_page.dart';
 import 'package:flutter_alltrick/social_login/social_login_Page.dart';
 import 'package:flutter_alltrick/udemy/login_Screen.dart';
-import 'package:flutter_alltrick/udemy/loginapp/login_page.dart';
 import 'package:flutter_alltrick/udemy/udemylab_Page.dart';
-
-import 'cmdev/DesigeFlutter.dart';
-import 'cmdev/Intrinsicwh_page.dart';
-import 'cmdev/expanded_page.dart';
-import 'cmdev/gridview1_page.dart';
-import 'cmdev/listview1_page.dart';
-import 'cmdev/listview2_page.dart';
-import 'cmdev/listview3_page.dart';
-import 'cmdev/listview4_page.dart';
 
 class OldMainPage extends StatefulWidget {
   @override

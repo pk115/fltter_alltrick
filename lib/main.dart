@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alltrick/udemy/add_member_screen.dart';
-import 'package:flutter_alltrick/udemy/add_screen.dart';
-import 'package:flutter_alltrick/udemy/member_screen.dart';
+import 'package:flutter_alltrick/main_menu.dart';
+import 'package:flutter_alltrick/sqlite/add_member_screen.dart';
+import 'package:flutter_alltrick/sqlite/add_screen.dart';
+import 'package:flutter_alltrick/sqlite/member_screen.dart';
 import 'package:flutter_alltrick/udemy/page_one.dart';
 import 'package:flutter_alltrick/udemy/users_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'cmdev/main_page.dart';
 
 void main() => runApp(MyApp());
 
