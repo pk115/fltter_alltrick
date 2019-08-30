@@ -93,7 +93,8 @@ class HomeViewState extends State<HomeView>
     bg.BackgroundGeolocation.onPowerSaveChange(_onPowerSaveChange);
     bg.BackgroundGeolocation.onEnabledChange(_onEnabledChange);
     bg.BackgroundGeolocation.onNotificationAction(_onNotificationAction);
-
+    bg.BackgroundGeolocation.registerHeadlessTask(
+        backgroundGeolocationHeadlessTask);
     // Fetch username and devivceParams for posting to tracker.transistorsoft.com
     final SharedPreferences prefs = await _prefs;
 
@@ -138,6 +139,61 @@ class HomeViewState extends State<HomeView>
         _tabController.animateTo(tabIndex);
       }
     });
+  }
+
+  void backgroundGeolocationHeadlessTask(bg.HeadlessEvent headlessEvent) async {
+    print('📬 --> $headlessEvent');
+
+    switch (headlessEvent.name) {
+      case bg.Event.TERMINATE:
+        try {
+          //bg.Location location = await bg.BackgroundGeolocation.getCurrentPosition(samples: 1);
+          print('[getCurrentPosition] Headless: $headlessEvent');
+        } catch (error) {
+          print('[getCurrentPosition] Headless ERROR: $error');
+        }
+        break;
+      case bg.Event.HEARTBEAT:
+        /* DISABLED getCurrentPosition on heartbeat
+      try {
+        bg.Location location = await bg.BackgroundGeolocation.getCurrentPosition(samples: 1);
+        print('[getCurrentPosition] Headless: $location');
+      } catch (error) {
+        print('[getCurrentPosition] Headless ERROR: $error');
+      }
+      */
+        break;
+      case bg.Event.LOCATION:
+        bg.Location location = headlessEvent.event;
+        break;
+      case bg.Event.MOTIONCHANGE:
+        bg.Location location = headlessEvent.event;
+        break;
+      case bg.Event.GEOFENCE:
+        bg.GeofenceEvent geofenceEvent = headlessEvent.event;
+        break;
+      case bg.Event.GEOFENCESCHANGE:
+        bg.GeofencesChangeEvent event = headlessEvent.event;
+        break;
+      case bg.Event.SCHEDULE:
+        bg.State state = headlessEvent.event;
+        break;
+      case bg.Event.ACTIVITYCHANGE:
+        bg.ActivityChangeEvent event = headlessEvent.event;
+        break;
+      case bg.Event.HTTP:
+        bg.HttpEvent response = headlessEvent.event;
+        break;
+      case bg.Event.POWERSAVECHANGE:
+        bool enabled = headlessEvent.event;
+        break;
+      case bg.Event.CONNECTIVITYCHANGE:
+        bg.ConnectivityChangeEvent event = headlessEvent.event;
+        break;
+      case bg.Event.ENABLEDCHANGE:
+        bool enabled = headlessEvent.event;
+        break;
+    }
   }
 
   void _onClickEnable(enabled) async {

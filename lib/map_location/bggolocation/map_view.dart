@@ -284,10 +284,11 @@ class MapViewState extends State<MapView>
         }));
   }
 
-  void _onPositionChanged(MapPosition pos, bool hasGesture, bool isGesture) {
+  void _onPositionChanged(MapPosition pos, bool hasGesture) {
     _mapOptions.crs.scale(_mapController.zoom);
   }
 
+//, bool hasGesture, bool isGesture
   @override
   Widget build(BuildContext context) {
     return FlutterMap(
