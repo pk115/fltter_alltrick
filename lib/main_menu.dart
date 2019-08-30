@@ -18,7 +18,7 @@ import 'package:flutter_alltrick/social_login/social_login_Page.dart';
 import 'package:flutter_alltrick/sqlite/member_screen.dart';
 import 'package:flutter_alltrick/udemy/login_Screen.dart';
 import 'package:flutter_alltrick/udemy/udemylab_Page.dart';
-
+import 'package:flutter_alltrick/map_location/bggolocation/app.dart';
 import 'desing/loginapp/login_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -136,6 +136,24 @@ class _MainPageState extends State<MainPage> {
                         RaisedButton(
                           onPressed: () => goRowColum(),
                           color: Colors.pink,
+                          child: Text("font",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        RaisedButton(
+                          onPressed: () => {},
+                          color: Colors.deepOrangeAccent,
+                          child: Text("iconimage iconfont",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        RaisedButton(
+                          onPressed: () => {},
+                          color: Colors.pink,
                           child: Text("Rows & Colums",
                               style: TextStyle(
                                   color: Colors.white,
@@ -166,7 +184,7 @@ class _MainPageState extends State<MainPage> {
                                     fontWeight: FontWeight.bold))),
                         RaisedButton(
                           onPressed: () => gologin2(),
-                          color: Colors.red,
+                          color: Colors.brown,
                           child: Text("login 2",
                               style: TextStyle(
                                   color: Colors.white,
@@ -207,7 +225,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         RaisedButton(
                           onPressed: () => SQLite(),
-                          color: Colors.deepPurpleAccent,
+                          color: Colors.brown,
                           child: Text("SQLite",
                               style: TextStyle(
                                   color: Colors.white,
@@ -236,7 +254,7 @@ class _MainPageState extends State<MainPage> {
                         ),
                         RaisedButton(
                           onPressed: () => QR_Barcode(),
-                          color: Colors.deepPurpleAccent,
+                          color: Colors.yellowAccent,
                           child: Text("QR & Barcode",
                               style: TextStyle(
                                   color: Colors.white,
@@ -267,6 +285,15 @@ class _MainPageState extends State<MainPage> {
                           onPressed: () => getlocation(),
                           color: Colors.red,
                           child: Text("Get Location",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                        RaisedButton(
+                          onPressed: () => Gobggolocation(),
+                          color: Colors.red,
+                          child: Text("background geolocation",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 20.0,
@@ -418,5 +445,10 @@ class _MainPageState extends State<MainPage> {
   Future SQLite() async {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MemberScreen()));
+  }
+
+  Future Gobggolocation() async {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => AdvancedApp()));
   }
 }

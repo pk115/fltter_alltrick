@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:async';
-import 'package:golocationmap/models/currentposition.dart';
-import 'package:golocationmap/models/databaselite.dart';
+import 'package:flutter_alltrick/models/currentposition.dart';
+import 'package:flutter_alltrick/models/databaselite.dart';
 import 'package:http/http.dart' as http;
 import 'package:unique_identifier/unique_identifier.dart';
 import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'

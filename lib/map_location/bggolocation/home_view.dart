@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:golocationmap/controller/saveposition.dart';
+import 'package:flutter_alltrick/controllers/saveposition.dart';
 import 'dart:async';
 import 'dart:convert';
 
@@ -9,7 +9,7 @@ import 'package:flutter_background_geolocation/flutter_background_geolocation.da
 import 'package:background_fetch/background_fetch.dart';
 import 'package:http/http.dart' as http;
 
-import '../app.dart';
+import '../../main_menu.dart';
 import 'map_view.dart';
 import 'event_list.dart';
 import './util/dialog.dart' as util;
@@ -207,7 +207,7 @@ class HomeViewState extends State<HomeView>
     bg.BackgroundGeolocation.playSound(util.Dialog.getSoundId("CLOSE"));
     bg.BackgroundGeolocation.stop();
     bg.BackgroundGeolocation.removeListeners();
-    runApp(HomeApp());
+    runApp(MainPage());
   }
 
   ////

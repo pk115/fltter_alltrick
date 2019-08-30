@@ -5,9 +5,10 @@ import 'package:flutter_background_geolocation/flutter_background_geolocation.da
     as bg;
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map/plugin_api.dart';
-import 'package:golocationmap/advanced/util/dialog.dart' as util;
-import 'package:golocationmap/controller/saveposition.dart';
-import 'package:golocationmap/models/databaselite.dart';
+import 'package:flutter_alltrick/map_location/bggolocation/util/dialog.dart'
+    as util;
+import 'package:flutter_alltrick/controllers/saveposition.dart';
+import 'package:flutter_alltrick/models/databaselite.dart';
 import 'geofence_view.dart';
 import 'package:latlong/latlong.dart';
 import 'util/geospatial.dart';

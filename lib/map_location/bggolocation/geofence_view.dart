@@ -3,7 +3,8 @@ import 'package:latlong/latlong.dart';
 
 import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'
     as bg;
-import 'package:golocationmap/advanced/util/dialog.dart' as util;
+import 'package:flutter_alltrick/map_location/bggolocation/util/dialog.dart'
+    as util;
 
 class GeofenceView extends StatefulWidget {
   LatLng center;
