@@ -18,8 +18,12 @@ import 'package:flutter_alltrick/social_login/social_login_Page.dart';
 import 'package:flutter_alltrick/sqlite/member_screen.dart';
 import 'package:flutter_alltrick/udemy/login_Screen.dart';
 import 'package:flutter_alltrick/udemy/udemylab_Page.dart';
-import 'package:flutter_alltrick/map_location/bggolocation/app.dart';
+
 import 'desing/loginapp/login_page.dart';
+import 'map_location/mapbox.dart';
+import 'other/barcode_QR_Page.dart';
+import 'other/signature_page.dart';
+import 'other/webview_page.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -133,33 +137,32 @@ class _MainPageState extends State<MainPage> {
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold)),
                         ),
-                        RaisedButton(
-                          onPressed: () => goRowColum(),
-                          color: Colors.pink,
-                          child: Text("font",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        RaisedButton(
-                          onPressed: () => {},
-                          color: Colors.deepOrangeAccent,
-                          child: Text("iconimage iconfont",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        RaisedButton(
-                          onPressed: () => {},
-                          color: Colors.pink,
-                          child: Text("Rows & Colums",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                        ),
+
+                        buildRaisedButton('Rows & Colums', onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Row_Colum()));
+                        }, buttoncolor: Colors.orange),
+
+//                        RaisedButton(
+//                          onPressed: () => {},
+//                          color: Colors.pink,
+//                          child: Text("font",
+//                              style: TextStyle(
+//                                  color: Colors.white,
+//                                  fontSize: 20.0,
+//                                  fontWeight: FontWeight.bold)),
+//                        ),
+//                        RaisedButton(
+//                          onPressed: () => {},
+//                          color: Colors.deepOrangeAccent,
+//                          child: Text("iconimage iconfont",
+//                              style: TextStyle(
+//                                  color: Colors.white,
+//                                  fontSize: 20.0,
+//                                  fontWeight: FontWeight.bold)),
+//                        ),
                       ],
                     ),
                   ),
@@ -253,15 +256,6 @@ class _MainPageState extends State<MainPage> {
                           style: TextStyle(fontSize: 20),
                         ),
                         RaisedButton(
-                          onPressed: () => QR_Barcode(),
-                          color: Colors.yellowAccent,
-                          child: Text("QR & Barcode",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                        ),
-                        RaisedButton(
                           onPressed: () => Camera(),
                           color: Colors.deepPurpleAccent,
                           child: Text("Camera",
@@ -270,6 +264,12 @@ class _MainPageState extends State<MainPage> {
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold)),
                         ),
+                        buildRaisedButton('QR & Barcode', onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BarcodePage()));
+                        }, buttoncolor: Colors.orange),
                       ],
                     ),
                   ),
@@ -290,15 +290,24 @@ class _MainPageState extends State<MainPage> {
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold)),
                         ),
-                        RaisedButton(
-                          onPressed: () => Gobggolocation(),
-                          color: Colors.red,
-                          child: Text("background geolocation",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  fontWeight: FontWeight.bold)),
-                        ),
+//                        RaisedButton(
+//                          onPressed: () => Gobggolocation(),
+//                          color: Colors.red,
+//                          child: Text("background geolocation",
+//                              style: TextStyle(
+//                                  color: Colors.white,
+//                                  fontSize: 20.0,
+//                                  fontWeight: FontWeight.bold)),
+//                        ),
+//                        RaisedButton(
+//                          onPressed: () => GoMapBox(),
+//                          color: Colors.red,
+//                          child: Text("MapBoxPage",
+//                              style: TextStyle(
+//                                  color: Colors.white,
+//                                  fontSize: 20.0,
+//                                  fontWeight: FontWeight.bold)),
+//                        ),
                       ],
                     ),
                   ),
@@ -319,6 +328,18 @@ class _MainPageState extends State<MainPage> {
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold)),
                         ),
+                        buildApplicationButton('Signature Pad', onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignaturePage()));
+                        }),
+                        buildRaisedButton('Web View', onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => WebViewPage()));
+                        }, buttoncolor: Colors.orange),
                         buildApplicationButton('Test Call Widget',
                             onPressed: () {}),
                         buildRaisedButton('Test Call Widget',
@@ -356,11 +377,6 @@ class _MainPageState extends State<MainPage> {
   gologin() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => LoginPage()));
-  }
-
-  goRowColum() {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Row_Colum()));
   }
 
   golistview1() {
@@ -448,7 +464,12 @@ class _MainPageState extends State<MainPage> {
   }
 
   Future Gobggolocation() async {
+//    Navigator.push(
+//        context, MaterialPageRoute(builder: (context) => AdvancedApp()));
+  }
+
+  Future GoMapBox() async {
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => AdvancedApp()));
+        context, MaterialPageRoute(builder: (context) => MapBoxPage()));
   }
 }

@@ -7,7 +7,9 @@ import 'package:flutter_alltrick/udemy/page_one.dart';
 import 'package:flutter_alltrick/udemy/users_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
